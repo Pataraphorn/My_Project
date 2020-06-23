@@ -1,3 +1,5 @@
+import colors from 'vuetify/es5/util/colors'
+
 export default {
   /*
    ** Nuxt rendering mode
@@ -14,6 +16,7 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
+    titleTemplate: '%s - ' + process.env.npm_package_name,
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
@@ -46,6 +49,7 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    '@nuxtjs/vuetify',
   ],
   /*
    ** Nuxt.js modules
@@ -53,12 +57,61 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/pwa',
+    '@nuxtjs/auth',
   ],
+  auth: {
+    redirect: {
+      login: '/login'
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: 'https://sakko-demo-api.herokuapp.com/api/v1/user/sign_in',
+            method: 'post',
+            propertyName: 'users.auth_jwt'
+          },
+          logout: {
+            url: 'https://sakko-demo-api.herokuapp.com/api/v1/user/sign_out',
+            method: 'delete'
+          },
+          user: {
+            url: 'https://sakko-demo-api.herokuapp.com/api/v1/user/me',
+            method: 'get',
+            propertyName: 'user'
+          },
+          tokenName: 'auth-token'
+        },
+      }
+    }
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  /*
+   ** vuetify module configuration
+   ** https://github.com/nuxt-community/vuetify-module
+   */
+  vuetify: {
+    customVariables: ['~/assets/variables.scss'],
+    theme: {
+      dark: true,
+      themes: {
+        dark: {
+          primary: colors.blue.darken2,
+          accent: colors.grey.darken3,
+          secondary: colors.amber.darken3,
+          info: colors.teal.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3,
+        },
+      },
+    },
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
