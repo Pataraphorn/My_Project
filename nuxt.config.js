@@ -62,7 +62,7 @@ export default {
   ],
   auth: {
     redirect: {
-      login: '/login'
+      login: '/login',
     },
     strategies: {
       local: {
@@ -70,21 +70,21 @@ export default {
           login: {
             url: 'https://sakko-demo-api.herokuapp.com/api/v1/user/sign_in',
             method: 'post',
-            propertyName: 'users.auth_jwt'
+            propertyName: 'user.auth_jwt',
           },
           logout: {
             url: 'https://sakko-demo-api.herokuapp.com/api/v1/user/sign_out',
-            method: 'delete'
+            method: 'delete',
           },
           user: {
             url: 'https://sakko-demo-api.herokuapp.com/api/v1/user/me',
             method: 'get',
-            propertyName: 'user'
+            propertyName: 'user',
           },
-          tokenName: 'auth-token'
+          tokenName: 'auth-token',
         },
-      }
-    }
+      },
+    },
   },
   /*
    ** Axios module configuration

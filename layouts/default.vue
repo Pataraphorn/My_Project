@@ -90,7 +90,7 @@ export default {
         {
           icon: 'mdi-chart-bubble',
           title: 'Blogs',
-          to: '/blogs/',
+          to: 'blogs',
         },
       ],
       miniVariant: false,

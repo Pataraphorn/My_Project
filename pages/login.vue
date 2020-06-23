@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h6>Email : saklism+demo1@gmail.com // Password : 12341234</h6>
+    <h4>Email : saklism+demo1@gmail.com // Password : 12341234</h4>
     <v-text-field v-model="email" label="Email"></v-text-field>
     <v-text-field
       v-model="password"
       label="Password"
       type="password"
     ></v-text-field>
-    <v-btn @click="handleLoginClick"> Login </v-btn>
+    <v-btn @click="handleLoginClicked"> Login </v-btn>
   </div>
 </template>
 
@@ -21,7 +21,7 @@ export default {
     }
   },
   methods: {
-    async handleLoginClick() {
+    async handleLoginClicked() {
       try {
         const response = await this.$auth.loginWith('local', {
           data: { user: { email: this.email, password: this.password } },
