@@ -92,6 +92,11 @@ export default {
           title: 'Blogs',
           to: 'blogs',
         },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Test VeeValidate',
+          to: '/T-VeeValidate',
+        },
       ],
       miniVariant: false,
       right: true,
