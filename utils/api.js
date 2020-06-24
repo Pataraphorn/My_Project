@@ -9,7 +9,7 @@ const getToken = function () {
   }
 }
 
-export async function request(method, url, data, auth = false) {
+export async function requestanimeapi(method, url, data, auth = false) {
   const headers = {}
   if (auth) {
     headers['auth-token'] = getToken()
