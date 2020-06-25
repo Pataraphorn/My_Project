@@ -62,26 +62,17 @@ export default {
   ],
   auth: {
     redirect: {
-      login: '/login',
+      login: '/APIreqres/login',
     },
     strategies: {
       local: {
         endpoints: {
           login: {
-            url: 'https://sakko-demo-api.herokuapp.com/api/v1/user/sign_in',
+            url: 'https://reqres.in/api/login',
             method: 'post',
-            propertyName: 'user.auth_jwt',
+            propertyName: 'token',
           },
-          logout: {
-            url: 'https://sakko-demo-api.herokuapp.com/api/v1/user/sign_out',
-            method: 'delete',
-          },
-          user: {
-            url: 'https://sakko-demo-api.herokuapp.com/api/v1/user/me',
-            method: 'get',
-            propertyName: 'user',
-          },
-          tokenName: 'auth-token',
+          tokenName: 'token',
         },
       },
     },

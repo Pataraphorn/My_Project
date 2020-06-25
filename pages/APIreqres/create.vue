@@ -9,12 +9,12 @@
     Job :
     <v-text-field v-model="job" outlined placeholder="job">leader</v-text-field>
     <v-btn @click="createUser"> Create </v-btn>
-    <v-btn :to="{ name: 'APIrepres-data' }"> Cancel </v-btn>
+    <v-btn :to="{ name: 'APIreqres-data' }"> Cancel </v-btn>
   </div>
 </template>
 
 <script>
-import * as RepresApi from '@/utils/represApi'
+import * as ReqresApi from '@/utils/reqresApi'
 export default {
   data() {
     return {
@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     async createUser() {
-      const response = await RepresApi.createusers(this.name, this.job)
+      const response = await ReqresApi.createusers(this.name, this.job)
       console.log('RESPONSE ', response.status)
       if (response.status === 201) {
         alert('Create user complete')
@@ -32,11 +32,11 @@ export default {
         alert('Cannot create user')
       }
       this.$router.replace({
-        // name: 'APIrepres-id',
+        // name: 'APIreqres-id',
         // params: {
         //   id: response.data.id,
         // },
-        name: 'APIrepres-data',
+        name: 'APIreqres-data',
       })
     },
   },

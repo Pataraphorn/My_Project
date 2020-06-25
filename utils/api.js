@@ -28,13 +28,13 @@ export async function requestapi(method, url, data, auth = false) {
   }
 }
 
-export async function represapi(method, url, data, auth = false) {
+export async function reqresapi(method, url, data, auth = false) {
   const headers = {}
   if (auth) {
     headers['auth-token'] = getToken()
   }
   try {
-    // call repres api
+    // call reqres api
     const response = await axios({
       method,
       url,

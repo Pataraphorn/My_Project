@@ -31,7 +31,7 @@
 <script>
 import * as BlogsApi from '@/utils/blogsApi'
 export default {
-  middleware: 'auth',
+  // middleware: 'auth',
   data() {
     return {
       blogs: [],

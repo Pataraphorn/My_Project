@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import * as RepresApi from '@/utils/represApi'
+import * as ReqresApi from '@/utils/reqresApi'
 export default {
   // middleware: 'auth',
   data() {
@@ -46,7 +46,7 @@ export default {
     }
   },
   async mounted() {
-    const response = await RepresApi.listusers(this.page)
+    const response = await ReqresApi.listusers(this.page)
     console.log('RESPONSE : ', response)
     this.results = response.data.data
     console.log('this : ', this.results)
