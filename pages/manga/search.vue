@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <div>
       <v-text-field v-model="query" label="Search"></v-text-field>

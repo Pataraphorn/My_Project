@@ -2,7 +2,7 @@
   <div>
     <div v-if="blog">
       <v-btn
-        :to="{ name: 'blogs-id-edit', params: { id: this$route.paramsid } }"
+        :to="{ name: 'blogs-id-edit', params: { id: this$route.params.id } }"
       >
         Edit
       </v-btn>

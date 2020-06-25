@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     Blogs !!! Required Login
-    <v-btn :to="{ name: 'blogs-new' }"> New Blog </v-btn
-    ><v-card
+    <v-btn :to="{ name: 'blogs-new' }"> New Blog </v-btn>
+    <v-card
       v-for="blog in blogs"
       :key="blog.id"
       class="mx-auto"
