@@ -15,7 +15,6 @@
         <p>Id : {{ user.id }}</p>
         <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
         <p>E-mail : {{ user.email }}</p>
-        <p>Name : {{ user.first_name }} {{ user.last_name }}</p>
       </div>
     </div>
   </div>

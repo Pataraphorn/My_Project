@@ -17,7 +17,7 @@
 
       <h5>Confirm password</h5>
       <ValidationObserver>
-        <ValidationProvider rules="confirmed:confirmation" v-slot="{ errors }">
+        <ValidationProvider v-slot="{ errors }" rules="confirmed:confirmation">
           <input
             v-model="value"
             type="text"
