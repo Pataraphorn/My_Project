@@ -64,18 +64,6 @@ export default {
     redirect: {
       login: '/APIreqres/login',
     },
-    strategies: {
-      local: {
-        endpoints: {
-          login: {
-            url: 'https://reqres.in/api/login',
-            method: 'post',
-            propertyName: 'token',
-          },
-          tokenName: 'token',
-        },
-      },
-    },
   },
   /*
    ** Axios module configuration

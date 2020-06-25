@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>User Information</h1>
-    <v-btn :to="{ name: 'APIrepres-create' }"> Create user </v-btn>
+    <v-btn :to="{ name: 'APIreqres-create' }"> Create user </v-btn>
     <div class="pagination">
       <p>{{ currentpage }} / {{ totalpages }}</p>
       <a v-if="previous" @click="previousPage">❮</a>
@@ -23,8 +23,8 @@
           <img :src="user.avatar" alt="" :style="{ width: '80%' }" />
         </td>
         <td>
-          <v-btn :to="{ name: 'APIrepres-id', params: { id: user.id } }">
-            Edit
+          <v-btn :to="{ name: 'APIreqres-id', params: { id: user.id } }">
+            show
           </v-btn>
         </td>
       </tr>

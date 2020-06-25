@@ -2,7 +2,6 @@
   <div>
     <div>
       <h1>Login Form</h1>
-      <p>email: "eve.holt@reqres.in", password : "cityslicka"</p>
       <hr />
       <ValidationProvider name="email" rules="required|email">
         <div slot-scope="{ errors }">
@@ -29,22 +28,26 @@ export default {
   },
   data() {
     return {
-      email: '',
-      password: '',
+      email: 'eve.holt@reqres.in',
+      password: 'cityslicka',
     }
   },
   methods: {
-    async userLogin() {
-      try {
-        const response = await this.$auth.loginWith('local', {
+    userLogin() {
+      console.log(this.email, this.password)
+      this.$store
+        .dispatch('Login', {
           email: this.email,
           password: this.password,
         })
-        console.log(this.email, this.password)
-        console.log(response)
-      } catch (err) {
-        console.log(err)
-      }
+        .then((success) => {
+          console.log('success')
+        })
+        .catch((error) => {
+          console.log(error.response.data)
+          console.log(error.response.status)
+          console.log(error.response.headers)
+        })
     },
   },
 }

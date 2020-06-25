@@ -77,11 +77,11 @@ export default {
           title: 'Welcome',
           to: '/',
         },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire',
-        },
+        // {
+        //   icon: 'mdi-chart-bubble',
+        //   title: 'Inspire',
+        //   to: '/inspire',
+        // },
         {
           icon: 'mdi-chart-bubble',
           title: 'Manga Search',
@@ -101,6 +101,11 @@ export default {
           icon: 'mdi-chart-bubble',
           title: 'API repres',
           to: '/APIreqres/login',
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'API repres data',
+          to: '/APIreqres/data',
         },
       ],
       miniVariant: false,
