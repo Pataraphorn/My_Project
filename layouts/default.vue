@@ -100,7 +100,7 @@ export default {
         {
           icon: 'mdi-chart-bubble',
           title: 'API repres',
-          to: '/APIrepres/login',
+          to: '/APIrepres/data',
         },
       ],
       miniVariant: false,
