@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import * as RepresApi from '@/utils/represApi'
+import * as ReqresApi from '@/utils/reqresApi'
 export default {
   data() {
     return {
@@ -28,14 +28,14 @@ export default {
   },
   async mounted() {
     console.log('THIS.$ROUTE.PARAMES.ID ', this.$route.params.id)
-    const response = await RepresApi.singleuser(this.$route.params.id)
+    const response = await ReqresApi.singleuser(this.$route.params.id)
     console.log('RESPONSE', response)
     this.user = response.data.data
   },
   method: {
     async updateUser() {
       console.log('save clicked ', this.blog)
-      const response = await RepresApi.updateusers(
+      const response = await ReqresApi.updateusers(
         this.user.id,
         this.user.name,
         this.user.job
@@ -44,7 +44,7 @@ export default {
       // this.$router.replace({ name: 'blogs-id', params: { id: this.blog.id } })
     },
     async deleteUser() {
-      const response = await RepresApi.deleteusers(this.id)
+      const response = await ReqresApi.deleteusers(this.id)
       console.log('RESPONSE ', response.status)
       if (response.status === 204) {
         alert('Delete user complete')
@@ -52,7 +52,7 @@ export default {
         alert('Cannot delete user')
       }
       this.$router.replace({
-        name: 'APIrepres-data',
+        name: 'APIreqres-data',
       })
     },
   },

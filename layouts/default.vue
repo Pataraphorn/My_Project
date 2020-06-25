@@ -87,20 +87,20 @@ export default {
           title: 'Manga Search',
           to: '/manga/search',
         },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Blogs',
-          to: 'blogs',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Test VeeValidate',
-          to: '/T-VeeValidate',
-        },
+        // {
+        //   icon: 'mdi-chart-bubble',
+        //   title: 'Blogs',
+        //   to: 'blogs',
+        // },
+        // {
+        //   icon: 'mdi-chart-bubble',
+        //   title: 'Test VeeValidate',
+        //   to: '/T-VeeValidate',
+        // },
         {
           icon: 'mdi-chart-bubble',
           title: 'API repres',
-          to: '/APIrepres/data',
+          to: '/APIreqres/login',
         },
       ],
       miniVariant: false,
