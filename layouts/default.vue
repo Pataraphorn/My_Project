@@ -97,6 +97,11 @@ export default {
           title: 'Test VeeValidate',
           to: '/T-VeeValidate',
         },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'API repres',
+          to: '/APIrepres/login',
+        },
       ],
       miniVariant: false,
       right: true,

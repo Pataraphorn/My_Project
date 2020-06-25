@@ -5,7 +5,7 @@ export default {
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  mode: 'spa',
+  mode: 'universal',
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
@@ -118,5 +118,8 @@ export default {
    */
   build: {
     transpile: ['vee-validate/dist/rules'],
+  },
+  extend(config, ctx) {
+    // ...
   },
 }
