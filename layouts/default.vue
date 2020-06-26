@@ -102,11 +102,11 @@ export default {
           title: 'API repres',
           to: '/APIreqres/login',
         },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'API repres data',
-          to: '/APIreqres/data',
-        },
+        // {
+        //   icon: 'mdi-chart-bubble',
+        //   title: 'API repres data',
+        //   to: '/APIreqres/data',
+        // },
       ],
       miniVariant: false,
       right: true,

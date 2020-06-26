@@ -35,6 +35,31 @@
           <span>{{ errors[0] }}</span>
         </ValidationProvider>
       </ValidationObserver>
+
+      <div>
+        <input
+          type="password"
+          placeholder="Password"
+          v-model="password"
+          v-validate="'required|min:6|max:35|confirmed'"
+          name="password"
+        />
+      </div>
+      <div>
+        <span>{{ errors.first('password') }}</span>
+      </div>
+      <div>
+        <input
+          type="password"
+          placeholder="Confirm password"
+          v-model="confirmPassword"
+          v-validate="'required|target:password'"
+          name="confirm_password"
+        />
+      </div>
+      <div>
+        <span>{{ errors.first('confirm_password') }}</span>
+      </div>
     </div>
   </div>
 </template>

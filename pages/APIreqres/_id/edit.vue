@@ -55,19 +55,19 @@ export default {
     this.user = response.data.data
   },
   method: {
-    async updateUser() {
-      console.log('save clicked ', this.user)
-      const response = await ReqresApi.updateusers(
-        this.user.id,
-        this.user.first_name,
-        this.user.last_name
-      )
-      console.log('RESPONSE ', response)
-      this.$router.replace({
-        name: 'APIreqres-id',
-        params: { id: this.user.id },
-      })
-    },
+    // async updateUser() {
+    //   console.log('save clicked ', this.user)
+    //   const response = await ReqresApi.updateusers(
+    //     this.user.id,
+    //     this.user.first_name,
+    //     this.user.last_name
+    //   )
+    //   console.log('RESPONSE ', response)
+    //   this.$router.replace({
+    //     name: 'APIreqres-id',
+    //     params: { id: this.user.id },
+    //   })
+    // },
   },
 }
 </script>

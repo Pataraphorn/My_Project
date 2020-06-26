@@ -17,8 +17,8 @@ export function createusers(name, job) {
   return reqresapi('post', url, { user: { name, job } }, true)
 }
 
-export function updateusers(id, name, job) {
-  const url = `${HOSTNAME}/api/users/${id}`
+export function updateusers(name, job) {
+  const url = `${HOSTNAME}/api/users/2`
   return reqresapi('get', url, { user: { name, job } }, true)
 }
 

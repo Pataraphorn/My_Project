@@ -1,5 +1,6 @@
 <template>
   <div>
+    <v-btn @click="logout"> Log out </v-btn>
     <h1>User Information</h1>
     <v-btn :to="{ name: 'APIreqres-create' }"> Create user </v-btn>
     <div class="pagination">
@@ -35,13 +36,14 @@
 <script>
 import * as ReqresApi from '@/utils/reqresApi'
 export default {
-  // middleware: 'auth',
+  middleware: 'auth',
   data() {
     return {
       results: [],
       page: 1,
       next: null,
       previous: null,
+      currentpage: null,
       totalpages: null,
     }
   },
@@ -72,6 +74,7 @@ export default {
       this.page = this.page + 1
       console.log(this.page)
     },
+    logout() {},
   },
 }
 </script>

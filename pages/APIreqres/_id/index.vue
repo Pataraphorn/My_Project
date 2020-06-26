@@ -4,10 +4,10 @@
     <v-btn :to="{ name: 'APIreqres-data' }">back</v-btn>
     <div v-if="user">
       <h2>Information of {{ user.first_name }} {{ user.last_name }}</h2>
-      <v-btn :to="{ name: 'APIreqres-id-edit', params: { id: user.id } }"
-        >Edit</v-btn
-      >
-      <v-btn color="error" @click="deleteUser"> Delete </v-btn>
+      <!--      <v-btn :to="{ name: 'APIreqres-id-edit', params: { id: user.id } }"-->
+      <!--        >Edit</v-btn-->
+      <!--      >-->
+      <!--      <v-btn color="error" @click="deleteUser"> Delete </v-btn>-->
       <div>
         <p>
           <img :src="user.avatar" alt="" :style="{ width: '20%' }" />
