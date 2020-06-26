@@ -79,7 +79,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import '~/assets/scss/table.scss';
+</style>
+
+<style scoped>
 .pagination {
   display: inline-block;
 }
@@ -101,24 +105,5 @@ export default {
 
 .pagination a:hover:not(.active) {
   background-color: #ddd;
-}
-#users {
-  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-#users td,
-#users th {
-  border: 1px solid #ddd;
-  padding: 5px;
-}
-
-#users th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: mediumslateblue;
-  color: white;
 }
 </style>

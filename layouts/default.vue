@@ -89,11 +89,6 @@ export default {
         },
         // {
         //   icon: 'mdi-chart-bubble',
-        //   title: 'Blogs',
-        //   to: 'blogs',
-        // },
-        // {
-        //   icon: 'mdi-chart-bubble',
         //   title: 'Test VeeValidate',
         //   to: '/T-VeeValidate',
         // },
@@ -102,11 +97,16 @@ export default {
           title: 'API repres',
           to: '/APIreqres/login',
         },
-        // {
-        //   icon: 'mdi-chart-bubble',
-        //   title: 'API repres data',
-        //   to: '/APIreqres/data',
-        // },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Create Components',
+          to: '/CreateComponent',
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Template',
+          to: '/Template/login',
+        },
       ],
       miniVariant: false,
       right: true,

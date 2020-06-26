@@ -1,0 +1,32 @@
+@import '~/assets/scss/color.scss';
+
+$table-header-size: 20px;
+$table-content-size: 15px;
+
+table,tr,td{
+  border:1px solid $black3-color;
+  padding: 10px 10px;
+}
+table{
+  margin: 10px auto;
+  font-size: $table-content-size;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  color: $ocean2-color;
+  th{
+    font-size: $table-header-size;
+    background-color: $ocean5-color;
+    border:1.5px solid $black2-color;
+    padding: 15px 10px;
+    color: $ocean8-color;
+    //text-align: left;
+  }
+  tr{
+    background-color: $haze3-color;
+  }
+  tr:nth-child(even){
+    background-color: $haze4-color;
+  }
+}

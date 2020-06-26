@@ -1,0 +1,45 @@
+@import '~/assets/scss/color.scss';
+
+$nav-height : 9vh;
+nav{
+  color: $ocean2-color;
+  background-color: $haze4-color;
+  height: $nav-height;
+  font-size: 20px;
+  margin: 0 0 10px 0;
+  li{
+    @extend nav;
+    display: inline-grid;
+    //background-color: $red1-color;
+    text-align: center;
+    align-items: center;
+    a{
+      @extend li;
+      &:hover{
+        background-color: $haze2-color;
+        font-weight: bold;
+      }
+      &:active{
+        background-color: $haze1-color;
+      }
+    }
+  }
+  .box{
+    &logo{
+      width: 10vw;
+    }
+    &search{
+      width: 50vw;
+      margin: 0 0 0 15vw;
+    }
+    &icon{
+      width: 5vw;
+    }
+  }
+  .l{
+    float: left;
+  }
+  .r{
+    float: right;
+  }
+}

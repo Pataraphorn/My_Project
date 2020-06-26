@@ -38,10 +38,10 @@
 
       <div>
         <input
-          type="password"
-          placeholder="Password"
           v-model="password"
           v-validate="'required|min:6|max:35|confirmed'"
+          type="password"
+          placeholder="Password"
           name="password"
         />
       </div>
@@ -50,10 +50,10 @@
       </div>
       <div>
         <input
-          type="password"
-          placeholder="Confirm password"
           v-model="confirmPassword"
           v-validate="'required|target:password'"
+          type="password"
+          placeholder="Confirm password"
           name="confirm_password"
         />
       </div>

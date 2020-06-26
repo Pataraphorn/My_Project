@@ -1,0 +1,46 @@
+@import '~/assets/scss/color.scss';
+
+button{
+  width: 100%;
+  color: $ocean2-color;
+  padding: 8px 8px;
+  margin: 8px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 1;
+  &:hover{
+    opacity: 0.65;
+    font-weight: bold;
+  }
+  &:active{
+    opacity: 1;
+  }
+}
+
+.button-search-nav{
+  background-color: $haze3-color;
+  display: inline-block;
+  width: 20%;
+}
+.button-form{
+  display: inline-block;
+  width: 35%;
+  text-align: center;
+  align-items: center;
+  margin: 10px 10px;
+  &-submit {
+    @extend .button-form;
+    background-color: $kermit2-color;
+    float: right;
+  }
+  &-cancel {
+    @extend .button-form;
+    background-color: $red1-color;
+    float: left;
+  }
+  &-register{
+    @extend .button-form;
+    background-color: $kermit3-color;
+    float: left;
+  }
+}

@@ -1,0 +1,22 @@
+@import '~/assets/scss/color.scss';
+
+input[type="text"]{
+  border-radius: 5px;
+  background-color: $ocean9-color;
+  color: $ocean2-color;
+  //width: 100%;
+  padding: 8px 15px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+.input-nav-search{
+  width: 75%;
+  display: inline-block;
+}
+.form-register,.form-login{
+  width: 82%;
+  float: right;
+  margin: 0 10px;
+}

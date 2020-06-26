@@ -1,9 +1,15 @@
 <template>
-  <v-app dark>
-    <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
-    </v-content>
-  </v-app>
+  <div>
+    <Nav />
+    <nuxt />
+  </div>
 </template>
+
+<script>
+import Nav from '~/components/Nav.vue'
+export default {
+  components: {
+    Nav,
+  },
+}
+</script>
