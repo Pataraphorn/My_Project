@@ -36,7 +36,6 @@
 <script>
 import * as ReqresApi from '@/utils/reqresApi'
 export default {
-  middleware: 'auth',
   data() {
     return {
       results: [],
@@ -74,7 +73,10 @@ export default {
       this.page = this.page + 1
       console.log(this.page)
     },
-    logout() {},
+    logout() {
+      this.$store.commit('logout')
+      console.log('Status Login : ', this.$store.state.auth.loggedIn)
+    },
   },
 }
 </script>

@@ -60,12 +60,8 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/auth',
   ],
-  auth: {
-    redirect: {
-      login: '/APIreqres/login',
-      logout: '/',
-      home: '/APIreqres/data',
-    },
+  router: {
+    middleware: ['authenticated'],
   },
   /*
    ** Axios module configuration

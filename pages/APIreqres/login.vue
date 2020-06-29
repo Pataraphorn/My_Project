@@ -23,6 +23,7 @@
 <script>
 import { ValidationProvider } from 'vee-validate'
 export default {
+  middleware: 'authenticated',
   components: {
     ValidationProvider,
   },
@@ -41,15 +42,9 @@ export default {
           password: this.password,
         })
         .then((success) => {
-          console.log(success)
-          const user = JSON.parse(localStorage.getItem('user'))
-          console.log(user.token)
-          this.$auth.setUser(user)
-          console.log('User : ', this.$store.state.auth)
-          this.$auth
-            .setUserToken(user.token)
-            .then(() => this.$toast.success('User set!'))
-          console.log('Login : ', this.$store.auth.loggedIn)
+          // console.log(success)
+          console.log('Status Login : ', this.$store.state.auth.loggedIn)
+          // console.log('Token : ', this.$store.state.token)
         })
         .catch((error) => {
           alert(error.response.data.error)
