@@ -23,6 +23,7 @@
 <script>
 import * as ReqresApi from '@/utils/reqresApi'
 export default {
+  middleware: 'authenticated',
   data() {
     return {
       name: 'morpheus',

@@ -23,7 +23,6 @@
 <script>
 import { ValidationProvider } from 'vee-validate'
 export default {
-  middleware: 'authenticated',
   components: {
     ValidationProvider,
   },
