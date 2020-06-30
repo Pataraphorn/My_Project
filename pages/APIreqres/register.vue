@@ -3,9 +3,9 @@
     <h1>Register Form</h1>
     <hr />
     <div class="content">
-      <label for="email">Email : </label>
       <ValidationProvider name="email" rules="required|email">
         <div slot-scope="{ errors }">
+          <label for="email">Email : </label>
           <input
             v-model="email"
             type="text"
@@ -19,9 +19,9 @@
       </ValidationProvider>
     </div>
     <div class="content">
-      <label for="password">Password : </label>
       <ValidationProvider name="password" rules="required|minmax:5,10">
         <div slot-scope="{ errors }">
+          <label for="password">Password : </label>
           <input
             v-model="password"
             type="text"

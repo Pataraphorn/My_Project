@@ -1,95 +1,97 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>
-            Vuetify is a progressive Material Design component framework for
-            Vue.js. It was designed to empower developers to create amazing
-            applications.
-          </p>
-          <p>
-            For more information on Vuetify, check out the
-            <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation </a
-            >.
-          </p>
-          <p>
-            If you have questions, please join the official
-            <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord </a
-            >.
-          </p>
-          <p>
-            Find a bug? Report it on the github
-            <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board </a
-            >.
-          </p>
-          <p>
-            Thank you for developing with Vuetify and I look forward to bringing
-            more exciting features in the future.
-          </p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3" />
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br />
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire">
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+  <div class="contain">
+    <h1>Login Form</h1>
+    <hr />
+    <div class="content">
+      <ValidationProvider name="email" rules="required|email">
+        <div slot-scope="{ errors }">
+          <label for="email">Email : </label>
+          <input
+            v-model="email"
+            type="text"
+            placeholder="your email"
+            name="email"
+            id="email"
+            class="form-login"
+          />
+          <p>{{ errors[0] }}</p>
+        </div>
+      </ValidationProvider>
+    </div>
+    <div class="content">
+      <ValidationProvider name="password" rules="required|minmax:5,10">
+        <div slot-scope="{ errors }">
+          <label for="password">Password : </label>
+          <input
+            v-model="password"
+            type="text"
+            placeholder="your password"
+            name="password"
+            id="password"
+            class="form-login"
+          />
+          <p>{{ errors[0] }}</p>
+        </div>
+      </ValidationProvider>
+    </div>
+    <div class="content">
+      <button type="submit" class="button-form-submit" @click="userLogin">
+        Login
+      </button>
+      <button type="submit" class="button-form-register" @click="userRegister">
+        register
+      </button>
+    </div>
+  </div>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
+<style lang="scss" scoped>
+@import '~/assets/scss/form.scss';
+@import '~/assets/scss/input.scss';
+@import '~/assets/scss/button.scss';
+</style>
 
+<script>
+import { ValidationProvider } from 'vee-validate'
 export default {
+  layout: 'session',
   components: {
-    Logo,
-    VuetifyLogo,
+    ValidationProvider,
+  },
+  data() {
+    return {
+      email: 'eve.holt@reqres.in',
+      password: 'cityslicka',
+    }
+  },
+  methods: {
+    userLogin() {
+      console.log(this.email, this.password)
+      this.$store
+        .dispatch('Login', {
+          email: this.email,
+          password: this.password,
+        })
+        .then((success) => {
+          // console.log(success)
+          console.log('Status Login : ', this.$store.state.auth.loggedIn)
+          // console.log('Token : ', this.$store.state.token)
+        })
+        .catch((error) => {
+          alert(error.response.data.error)
+        })
+    },
+    userRegister() {
+      this.$router.replace({
+        name: 'APIreqres-register',
+      })
+    },
   },
 }
 </script>
+<style lang="scss" scoped></style>
+<style scoped>
+input {
+  color: lightsteelblue;
+}
+</style>

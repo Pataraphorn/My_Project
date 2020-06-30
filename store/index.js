@@ -6,17 +6,18 @@ export const state = () => ({
 export const mutations = {
   catchUser(state, val) {
     state.token = val
-
     // console.log('Login token >> ', state.token)
   },
   logout(state) {
     localStorage.setItem('token_access', '')
     this.$auth.setUser('')
     state.token = ''
+    localStorage.clear()
   },
 }
 export const actions = {
   Login({ commit }, { email, password }) {
+    localStorage.clear()
     console.log('log in access . . .')
     axios
       .post('https://reqres.in/api/login', { email, password })
