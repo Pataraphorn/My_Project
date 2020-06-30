@@ -57,7 +57,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '~/assets/scss/color.scss';
+@import '~/assets/scss/form.scss';
 @import '~/assets/scss/input.scss';
 @import '~/assets/scss/button.scss';
 </style>
