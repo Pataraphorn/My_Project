@@ -63,6 +63,7 @@ export default {
   router: {
     middleware: ['authenticated'],
   },
+  loading: '~/components/loading.vue',
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
