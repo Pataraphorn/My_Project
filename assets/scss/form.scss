@@ -1,0 +1,23 @@
+@import '~/assets/scss/color.scss';
+.contain {
+  margin: 10% 20%;
+  padding: 2% 2%;
+  font-size: 18px;
+  background-color: $black5-color;
+}
+h1 {
+  text-align: center;
+}
+hr {
+  margin: 10px 0;
+}
+$div-content-height: 8vh;
+.content {
+  margin: 10px 0;
+  height: $div-content-height;
+}
+label {
+  padding: 15px 0;
+  display: inline-block;
+  font-weight: bold;
+}

@@ -8,6 +8,28 @@
       <a v-if="previous" @click="previousPage">❮</a>
       <a v-if="next" @click="nextPage">❯</a>
     </div>
+
+    <!--    <div class="paginate1">-->
+    <!--      <div class="paging" href="#" v-if="this.page != 1" @click="previousPage">-->
+    <!--        &laquo;-->
+    <!--      </div>-->
+    <!--      <div-->
+    <!--        :class="`paging ${n === page ? 'active' : ''}`"-->
+    <!--        v-for="n in totalpages"-->
+    <!--        :v-model="page"-->
+    <!--        @click="selectPage(n)"-->
+    <!--      >-->
+    <!--        {{ n }}-->
+    <!--      </div>-->
+    <!--      <div-->
+    <!--        class="paging"-->
+    <!--        href="#"-->
+    <!--        v-if="this.page != this.totalpages"-->
+    <!--        @click="nextPage"-->
+    <!--      >-->
+    <!--        &raquo;-->
+    <!--      </div>-->
+    <!--    </div>-->
     <table id="users">
       <tr>
         <th>Id</th>
@@ -41,9 +63,6 @@ export default {
     return {
       results: [],
       page: 1,
-      next: null,
-      previous: null,
-      currentpage: null,
       totalpages: null,
     }
   },
@@ -52,27 +71,26 @@ export default {
     console.log('RESPONSE : ', response)
     this.results = response.data.data
     console.log('this : ', this.results)
-    this.currentpage = response.data.page
+    console.log('current page : ', response.data.page)
     this.totalpages = response.data.total_pages
-    if (this.currentpage === 1) {
-      this.previous = null
-      this.next = 1
-    } else if (this.currentpage < this.totalpages) {
-      this.previous = 1
-      this.next = 1
-    } else if (this.currentpage === this.totalpages) {
-      this.previous = 1
-      this.next = null
-    }
   },
   methods: {
     previousPage() {
-      this.page = this.page - 1
+      this.page -= 1
       console.log(this.page)
+      this.selectPage(this.page)
     },
     nextPage() {
-      this.page = this.page + 1
+      this.page += 1
       console.log(this.page)
+      this.selectPage(this.page)
+    },
+    async selectPage(value) {
+      this.page = value
+      const response = await ReqresApi.listusers(this.page)
+      console.log('RESPONSE : ', response)
+      this.results = response.data.data
+      console.log('this : ', this.results)
     },
     logout() {
       this.$store.commit('logout')

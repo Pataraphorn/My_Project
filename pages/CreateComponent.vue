@@ -1,13 +1,6 @@
 <template>
   <div>
     <h5>create component</h5>
-    <div>
-      <RegisterForm />
-    </div>
-    <div>
-      <LoginForm />
-    </div>
-
     <table class="center">
       <tr>
         <th>Firstname</th>
@@ -38,13 +31,7 @@
 </style>
 
 <script>
-import LoginForm from '~/components/loginForm.vue'
-import RegisterForm from '~/components/registerForm.vue'
 export default {
   layout: 'session',
-  components: {
-    LoginForm,
-    RegisterForm,
-  },
 }
 </script>

@@ -72,21 +72,21 @@ export default {
       drawer: false,
       fixed: false,
       items: [
-        {
-          icon: 'mdi-apps',
-          title: 'Welcome',
-          to: '/',
-        },
+        // {
+        //   icon: 'mdi-apps',
+        //   title: 'Welcome',
+        //   to: '/',
+        // },
         // {
         //   icon: 'mdi-chart-bubble',
         //   title: 'Inspire',
         //   to: '/inspire',
         // },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Manga Search',
-          to: '/manga/search',
-        },
+        // {
+        //   icon: 'mdi-chart-bubble',
+        //   title: 'Manga Search',
+        //   to: '/manga/search',
+        // },
         // {
         //   icon: 'mdi-chart-bubble',
         //   title: 'Test VeeValidate',
@@ -97,16 +97,16 @@ export default {
           title: 'API repres',
           to: '/APIreqres/login',
         },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Create Components',
-          to: '/CreateComponent',
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Template',
-          to: '/Template/login',
-        },
+        // {
+        //   icon: 'mdi-chart-bubble',
+        //   title: 'Create Components',
+        //   to: '/CreateComponent',
+        // },
+        // {
+        //   icon: 'mdi-chart-bubble',
+        //   title: 'Template',
+        //   to: '/Template/login',
+        // },
       ],
       miniVariant: false,
       right: true,
