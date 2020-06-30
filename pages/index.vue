@@ -72,11 +72,6 @@ export default {
           email: this.email,
           password: this.password,
         })
-        .then((success) => {
-          // console.log(success)
-          console.log('Status Login : ', this.$store.state.auth.loggedIn)
-          // console.log('Token : ', this.$store.state.token)
-        })
         .catch((error) => {
           alert(error.response.data.error)
         })

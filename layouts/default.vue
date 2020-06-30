@@ -97,6 +97,11 @@ export default {
           title: 'API repres',
           to: '/APIreqres/login',
         },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'API posts',
+          to: '/posts/post',
+        },
         // {
         //   icon: 'mdi-chart-bubble',
         //   title: 'Create Components',
